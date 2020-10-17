@@ -1,0 +1,72 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 75rem;
+  width: 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+  & > div {
+    margin: 1em;
+  }
+}
+
+.selectWrapper {
+  max-width: 75rem;
+  width: 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 3em 0;
+  // padding: 1em;
+  // text-align: right;
+  font-size: 0.9rem;
+
+  .select {
+    position: relative;
+    background-color: blue;
+    width: 8rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    select {
+      // height: 2rem;
+      border: 1px solid gray;
+      padding: 0.5em 2em 0.5em 1em;
+      background-color: white;
+      outline: none;
+      margin-right: 5%;
+      -moz-appearance: none; /* Firefox */
+      -webkit-appearance: none; /* Safari and Chrome */
+      appearance: none;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .arrow {
+      position: absolute;
+      width: 1rem;
+
+      img {
+        width: 100%;
+      }
+
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  @include md-xl {
+    font-size: 0.8rem;
+  }
+
+  @include md-down {
+    font-size: 0.75rem;
+  }
+}

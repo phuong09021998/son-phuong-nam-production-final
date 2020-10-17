@@ -1,0 +1,84 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.loading {
+  width: 100%;
+  margin-top: 5em;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  padding: 5em;
+}
+
+.formContainer {
+  margin: 5em 20%;
+  box-shadow: 1px 2px 4px gray;
+  border-radius: 0.2em;
+  padding: 2em;
+
+  .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $pink;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 2em;
+  }
+
+  .errorLabel {
+    text-align: center;
+    color: $pink;
+  }
+
+  .waiting {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+  }
+
+  .buttonWrapper {
+    display: flex;
+    justify-content: center;
+    .button {
+      position: relative;
+      margin: 0 0.5em;
+      font-weight: bold;
+      margin-top: 1em;
+    }
+  }
+
+  div {
+    & > p {
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-top: 1.5em;
+      line-height: 0.6rem;
+    }
+
+    input {
+      border: none;
+      width: 100%;
+      border-bottom: 1px solid gray;
+      outline: none;
+    }
+
+    & > select {
+      outline: none;
+    }
+
+    & > img {
+      width: 10rem;
+      display: block;
+      margin-top: 1em;
+    }
+    & > span {
+      display: block;
+      color: $pink;
+      font-size: 0.8rem;
+    }
+  }
+}

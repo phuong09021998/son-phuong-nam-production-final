@@ -1,0 +1,44 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.productsWrapper {
+  max-width: 75rem;
+  width: 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 5em;
+
+  .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    color: $blue;
+    margin-bottom: 1em;
+  }
+
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2em;
+
+    & > div {
+      margin: 1em;
+    }
+  }
+
+  @include md-lg {
+    margin-top: 3em;
+    .title {
+      font-size: 1rem;
+    }
+  }
+
+  @include md-down {
+    margin-top: 2em;
+    .title {
+      font-size: 1rem;
+    }
+  }
+}

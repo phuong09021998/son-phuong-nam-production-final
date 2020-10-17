@@ -1,0 +1,16 @@
+.topTableWrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 1em;
+  color: #1890ff;
+
+  .create {
+    display: flex;
+    cursor: pointer;
+
+    .icon {
+      padding-right: 0.5em;
+    }
+  }
+}

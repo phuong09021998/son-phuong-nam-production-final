@@ -1,0 +1,25 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.scollTopWrapper {
+  width: 3rem;
+  position: fixed;
+  left: 7%;
+  bottom: 5%;
+  transition: 0.3s;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+  }
+
+  @include md-down {
+    width: 2.5rem !important;
+  }
+}
+
+.scollTopWrapperHidden {
+  @extend .scollTopWrapper;
+  opacity: 0;
+  visibility: hidden;
+}

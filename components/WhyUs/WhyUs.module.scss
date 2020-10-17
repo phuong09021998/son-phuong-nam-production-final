@@ -1,0 +1,144 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.whyUsWrapper {
+  margin: 5em 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 20rem;
+    flex-shrink: 0;
+    border-radius: 1em;
+    box-shadow: 2px 2px 4px 1px gray;
+    margin: 0 3em;
+    padding: 3em;
+    height: 18rem;
+
+    .icon {
+      width: 5rem;
+      img {
+        width: 100%;
+      }
+    }
+
+    .title {
+      font-size: 1rem;
+      font-weight: bold;
+      color: $blue;
+      margin: 1em 0;
+    }
+
+    .text {
+      font-size: 0.9rem;
+      text-align: center;
+    }
+  }
+
+  .itemLarge {
+    @extend .item;
+    flex-basis: 23rem !important;
+    height: 20rem;
+
+    .icon {
+      width: 7rem;
+    }
+
+    .title {
+      font-size: 1.1rem;
+    }
+
+    .text {
+      font-size: 1rem;
+    }
+  }
+}
+
+@include md-xl {
+  .whyUsWrapper {
+    margin: 3em 0 !important;
+    flex-direction: column !important;
+    align-items: center !important;
+
+    .itemLarge {
+      width: 70% !important;
+      margin-bottom: 2em;
+      flex-basis: 20% !important;
+    }
+
+    .smallItemsWrapper {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+@include md-lg {
+  .whyUsWrapper {
+    margin: 2em 0 !important;
+  }
+  .itemLarge {
+    flex-basis: 15rem !important;
+
+    .icon {
+      width: 5rem !important;
+    }
+
+    .title {
+      font-size: 1rem !important;
+    }
+
+    .text {
+      font-size: 0.9rem !important;
+    }
+  }
+
+  .smallItemsWrapper {
+    .item {
+      flex-basis: 17rem !important;
+      padding: 2em !important;
+      height: 15rem !important;
+      .title {
+        font-size: 0.9rem !important;
+      }
+
+      .text {
+        font-size: 0.8rem !important;
+      }
+    }
+  }
+}
+
+@include md-down {
+  .whyUsWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem !important;
+    margin-bottom: 1em !important;
+
+    .item {
+      width: 80% !important;
+      flex-basis: 10rem !important;
+      margin: 0.5em 0;
+      padding: 1em !important;
+
+      .icon {
+        width: 3rem !important;
+      }
+
+      .title {
+        font-size: 0.9rem !important;
+      }
+
+      .text {
+        font-size: 0.8rem !important;
+      }
+    }
+  }
+}

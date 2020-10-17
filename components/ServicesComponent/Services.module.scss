@@ -1,0 +1,136 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: $blue;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.servicesWrapper {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  margin-bottom: 5em;
+  max-width: 75rem;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 2em;
+
+  .item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5em;
+    background-color: white;
+    flex-basis: 40%;
+    flex-shrink: 0;
+    margin: 1em;
+    padding: 0.5em 2em;
+    justify-content: space-between;
+    box-shadow: 2px 2px 4px 1px gray;
+
+    .icon {
+      flex-basis: 4rem;
+      flex-shrink: 0;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .name {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      color: $pink;
+    }
+  }
+}
+
+@include lg-xl {
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .servicesWrapper {
+    .item {
+      .icon {
+        flex-basis: 3.5rem;
+      }
+
+      .name {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@include md-lg {
+  .title {
+    font-size: 1rem;
+    margin-bottom: 1em;
+  }
+
+  .servicesWrapper {
+    margin-bottom: 3em;
+    .item {
+      .icon {
+        flex-basis: 3.2rem;
+      }
+
+      .name {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@include sm-md {
+  .title {
+    font-size: 0.9rem;
+    margin-bottom: 1em;
+  }
+
+  .servicesWrapper {
+    margin-bottom: 2em;
+    justify-content: center !important;
+    .item {
+      flex-basis: 60% !important;
+
+      .icon {
+        flex-basis: 3rem;
+      }
+
+      .name {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@include only-sm {
+  .title {
+    font-size: 0.9rem;
+    margin-bottom: 0.8em;
+  }
+
+  .servicesWrapper {
+    margin-bottom: 2em;
+    justify-content: center !important;
+    .item {
+      flex-basis: 60% !important;
+
+      .icon {
+        flex-basis: 3rem;
+      }
+
+      .name {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

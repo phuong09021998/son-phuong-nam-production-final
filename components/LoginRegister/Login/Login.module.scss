@@ -1,0 +1,161 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.loginWrapper {
+  background-color: $blue;
+
+  .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    margin-top: 5em;
+    margin-bottom: 1em;
+  }
+
+  form {
+    padding: 0 3em;
+    position: relative;
+
+    .forgetPass {
+      text-align: right;
+      color: white;
+      cursor: pointer;
+      margin-bottom: 1em;
+    }
+
+    img {
+      width: 1.5rem;
+      position: absolute;
+      margin: 0.8em 0 0 0.5em;
+    }
+
+    .waiting {
+      text-align: center;
+      margin-top: 0.5em;
+
+      .waitingIcon {
+        color: $pink;
+      }
+    }
+
+    .button {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      margin-top: 1em;
+      box-shadow: 1px 2px 4px gray;
+      font-weight: bold;
+    }
+
+    .errorLabel {
+      color: white;
+      text-align: center;
+    }
+
+    div {
+      width: 100%;
+
+      input {
+        width: 100%;
+        height: 2.2rem;
+        padding: 0.5em 0.3em 0.5em 3em;
+        margin: 0.4em 0;
+        border: none;
+        outline: none;
+        border-radius: 0.2em;
+      }
+
+      span {
+        color: white;
+      }
+    }
+  }
+
+  .thirdAuthen {
+    margin-top: 7em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .item {
+      display: flex;
+      margin: 0.5em 0;
+      background-color: white;
+      border-radius: 0.2em;
+      box-shadow: 1px 2px 4px gray;
+      width: 15rem;
+      height: 2.5rem;
+      align-items: center;
+      cursor: pointer;
+
+      .icon {
+        flex-basis: 2.2rem;
+        flex-shrink: 0;
+        margin: 0 0.5em;
+        img {
+          width: 80%;
+        }
+      }
+
+      .text {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .register {
+    font-size: 0.9rem;
+    color: white;
+    text-align: center;
+
+    span {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .close {
+    width: 2.2rem;
+    cursor: pointer;
+
+    visibility: hidden;
+    opacity: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  @include md-xl {
+    .title {
+      margin-top: 5em;
+    }
+
+    .thirdAuthen {
+      margin-top: 3em;
+    }
+  }
+
+  @include md-down {
+    .title {
+      margin-top: 2em;
+    }
+    .thirdAuthen {
+      margin-top: 3em;
+    }
+  }
+
+  @include only-sm {
+    .close {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

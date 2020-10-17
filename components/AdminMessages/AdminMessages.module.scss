@@ -1,0 +1,105 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.topItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .dot {
+    position: absolute;
+    height: 0.8em;
+    width: 0.8em;
+    background-color: $pink;
+    bottom: 0;
+    border-radius: 0.5em;
+    left: 0;
+  }
+}
+
+.messagesWrapper {
+  width: 20rem;
+  min-height: 4rem;
+  background-color: white;
+  // border: 0.5px solid gray;
+  box-shadow: 1px 2px 2px 0.5px gray;
+  border-radius: 0.2em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em 1em;
+  max-height: 20rem;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // height: 100%;
+    flex-grow: 1;
+  }
+
+  .noMessage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // height: 100%;
+    flex-grow: 1;
+  }
+
+  .messageItem {
+    display: flex;
+    margin: 0.2em 0;
+    transition: 0.3s;
+    cursor: pointer;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+
+    .avatar {
+      margin-right: 1em;
+      position: relative;
+    }
+
+    .dot {
+      width: 1em;
+      height: 1em;
+      position: absolute;
+      // color: blue;
+      background-color: $green;
+      border-radius: 1em;
+      right: 0;
+      bottom: 0;
+    }
+
+    .middleMessage {
+      flex-grow: 1;
+      .name {
+        font-size: 0.9rem;
+        color: $blue;
+      }
+
+      .message {
+        font-size: 0.8rem;
+        position: absolute;
+      }
+    }
+
+    .rightMessage {
+      font-size: 0.8rem;
+      color: gray;
+    }
+
+    &:hover {
+      background-color: lighten(gray, 40%);
+    }
+  }
+}

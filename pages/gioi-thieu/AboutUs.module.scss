@@ -1,0 +1,137 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.aboutUsWrapper {
+  max-width: 75rem;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 10em;
+  margin-top: 3em;
+
+  .img {
+    width: 40rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .aboutUsCard {
+    width: 40rem;
+    // height: 10rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5em;
+    box-shadow: 2px 2px 6px 2px gray;
+    position: absolute;
+    right: 3em;
+    bottom: -5rem;
+
+    .title {
+      font-size: 1rem;
+      font-weight: bold;
+      color: $blue;
+      text-transform: uppercase;
+    }
+
+    .question {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: $pink;
+      text-transform: uppercase;
+      padding: 0.2em 0;
+    }
+
+    .text {
+      font-size: 0.9rem;
+    }
+  }
+
+  @include lg-xl {
+    .aboutUsCard {
+      width: 35rem !important;
+      // right: 3em;
+
+      .title {
+        font-size: 1rem;
+      }
+
+      .question {
+        font-size: 1rem;
+      }
+
+      .text {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  @include md-xl {
+    .aboutUsCard {
+      width: 30rem;
+    }
+
+    .title {
+      font-size: 0.9rem !important;
+    }
+
+    .question {
+      font-size: 1rem !important;
+    }
+
+    .text {
+      font-size: 0.8rem !important;
+    }
+  }
+
+  @include sm-md {
+    .aboutUsCard {
+      width: 25rem;
+    }
+
+    .img {
+      width: 30rem !important;
+    }
+
+    .title {
+      font-size: 0.8rem !important;
+    }
+
+    .question {
+      font-size: 0.9rem !important;
+    }
+
+    .text {
+      font-size: 0.8rem !important;
+    }
+  }
+
+  @include only-sm {
+    margin-bottom: 13em !important;
+    .aboutUsCard {
+      width: 20rem;
+      right: 0.7rem;
+    }
+
+    .img {
+      width: 20rem !important;
+    }
+
+    .title {
+      font-size: 0.8rem !important;
+    }
+
+    .question {
+      font-size: 0.9rem !important;
+    }
+
+    .text {
+      font-size: 0.7rem !important;
+    }
+
+    .aboutUsCard {
+      bottom: -10rem;
+    }
+  }
+}

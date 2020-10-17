@@ -1,0 +1,98 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.contentWrapper {
+  margin: 3em 2em;
+
+  .item {
+    .title {
+      font-size: 1.1rem;
+      text-align: center;
+      text-transform: uppercase;
+      color: $blue;
+      font-weight: bold;
+    }
+
+    .loading {
+      margin: 2em 0;
+      text-align: center;
+    }
+
+    .carouselItem {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 1em 0;
+      border: 1px solid $blue;
+      border-radius: 0.5em;
+      max-width: 70em;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+
+      .name {
+        font-size: 0.9rem;
+        color: $pink;
+      }
+
+      .img {
+        flex-basis: 30rem;
+        flex-shrink: 0;
+        margin: 0 5em;
+        img {
+          width: 100%;
+        }
+
+        @include md-xl {
+          flex-basis: 20rem;
+        }
+      }
+
+      .input {
+        label {
+          color: $blue;
+          font-size: 0.9rem;
+          cursor: pointer;
+        }
+      }
+    }
+
+    form {
+      // background-color: yellow;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      // justify-content: flex-start;
+      max-width: 40rem;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 1px solid $blue;
+      padding: 2em;
+      margin-top: 1em;
+      border-radius: 0.5em;
+
+      .formItem {
+        margin: 0.5em 0;
+        display: flex;
+        align-items: center;
+        // background-color: blue;
+        // justify-content: flex-start;
+        width: 100%;
+
+        .name {
+          margin-right: 0.5em;
+          flex-basis: 5rem;
+          flex-shrink: 0;
+        }
+
+        input {
+          min-width: 30rem;
+          border: none;
+          border-bottom: 1px solid gray;
+          outline: none;
+        }
+      }
+    }
+  }
+}

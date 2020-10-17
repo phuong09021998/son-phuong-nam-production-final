@@ -1,0 +1,25 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.relatedPostWrapper {
+  width: 100%;
+  max-width: 75rem;
+  padding: 0 1em;
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+  margin: 3em 0;
+
+  .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $pink;
+    text-transform: uppercase;
+    padding-bottom: 2em;
+    text-align: center;
+
+    @include md-down {
+      font-size: 1rem;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.map {
+  width: 100%;
+}
+
+.chatWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3em 0;
+
+  .icon {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 2em;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.cardWrapper {
+  width: 20rem;
+  box-shadow: 1px 2px 4px 1px gray;
+  padding: 1em 1.5em;
+  border-radius: 0.5em;
+  margin: auto;
+  font-size: 0.9rem;
+  position: relative;
+
+  .item {
+    display: flex;
+    align-items: center;
+    border-bottom: 0.5px solid gray;
+    padding: 0.5em 0;
+    // z-index: 100;
+
+    .icon {
+      flex-basis: 2.5rem;
+      flex-shrink: 0;
+      height: 2.5rem;
+      margin-right: 1em;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .item:last-child {
+    border-bottom: none !important;
+  }
+  @include md-down {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,242 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.chatWrapper {
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0;
+  right: 1%;
+  height: 30rem;
+  width: 22rem;
+  border-radius: 0.2em;
+  background-color: white;
+  padding: 0 1em;
+  box-shadow: 1px 2px 4px 2px gray;
+  animation: zoom 0.2s forwards;
+
+  @include only-sm {
+    width: 100%;
+    height: 100%;
+    right: 0;
+  }
+
+  @keyframes zoom {
+    from {
+      transform: scale(0.3);
+      bottom: -50%;
+      transfrom: translateY(-50%);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.5px solid gray;
+    padding: 0.5em 0;
+
+    .admin {
+      display: flex;
+      align-items: center;
+
+      .leftAdmin {
+        flex-basis: 3rem;
+        height: 3rem;
+        flex-shrink: 0;
+        margin-right: 0.7em;
+      }
+
+      .rightAdmin {
+        .name {
+          font-size: 0.9rem;
+          font-weight: bold;
+        }
+        .status {
+          font-size: 0.8rem;
+          color: $green;
+        }
+
+        .statusOffline {
+          font-size: 0.8rem;
+          color: gray;
+        }
+      }
+    }
+
+    .close {
+      width: 1rem;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .middle {
+    flex-grow: 1;
+    position: relative;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
+    padding: 0 1em;
+    padding-bottom: 1em !important;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .text {
+      font-size: 0.82rem;
+      color: white;
+      max-width: 60%;
+      padding: 0.5em;
+      // border-radius: 0.2em;
+      margin: 1em 0;
+      overflow-wrap: break-word;
+      display: block;
+      width: fit-content;
+      position: relative;
+    }
+
+    .time {
+      font-size: 0.75rem;
+      color: gray;
+      text-align: center;
+      margin-top: 3em;
+      position: relative;
+      height: 0.5em;
+    }
+
+    .normalText {
+      @extend .text;
+      background-color: lighten($pink, 10%);
+      margin-left: auto;
+      border-radius: 0.2em 0.2em 0 0.2em;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: -0.3em;
+        border-top: 0.3em solid transparent;
+        // border-top-color: blue;
+        border-left: 0.3em solid lighten($pink, 10%);
+        border-right: 0.3 solid transparen;
+      }
+    }
+
+    .seen {
+      text-align: right;
+      font-size: 0.8em;
+      position: relative;
+      height: 0;
+      color: gray;
+      background-color: yellow;
+      transform: translateY(-1em);
+      // position: absolute;
+    }
+
+    .senderText {
+      @extend .text;
+      background-color: lighten(gray, 20%);
+      margin-right: auto;
+      border-radius: 0.2em 0.2em 0.2em 0;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: -0.3em;
+        border-bottom: 0.3em solid lighten(gray, 20%);
+        border-left: 0.3em solid transparent;
+        border-right: 0.3 solid lighten(gray, 20%);
+      }
+    }
+  }
+
+  .bottom {
+    flex-basis: 5rem;
+    flex-shrink: 0;
+    border-top: 0.5px solid gray;
+    padding: 0.5em 0;
+
+    .inputWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .input {
+        flex-grow: 1;
+
+        input {
+          width: 100%;
+          border: none;
+          outline: none;
+        }
+      }
+
+      .send {
+        flex-basis: 2rem;
+        flex-shrink: 0;
+        margin-left: 1em;
+        cursor: pointer;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .attachWrapper {
+      display: flex;
+      margin-top: 0.5em;
+
+      .attachItem {
+        flex-basis: 1.5rem;
+        flex-shrink: 0;
+        margin: 0 0.5em;
+        cursor: pointer;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .requireLogin {
+    flex-grow: 1;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .item {
+      display: flex;
+      justify-content: flex-start;
+      margin: 0.5em 0;
+      align-items: center;
+      width: 15rem;
+      border-radius: 0.2em;
+      // background-color: yellow;
+      box-shadow: 1px 2px 4px 1px gray;
+      padding: 0.3em 0.5em;
+      cursor: pointer;
+
+      .icon {
+        flex-basis: 1.5rem;
+        flex-shrink: 0;
+        margin-right: 0.5em;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

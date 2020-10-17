@@ -1,0 +1,25 @@
+@import 'styles/mixins.scss';
+
+.carousel {
+  max-width: 93.75rem;
+  // background-color: yellow;
+  margin-top: 2em;
+  width: 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+  margin-bottom: 5em;
+
+  .item {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@include md-down {
+  .carousel {
+    margin-bottom: 2em;
+  }
+}
