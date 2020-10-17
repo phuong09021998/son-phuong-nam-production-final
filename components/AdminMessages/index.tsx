@@ -34,6 +34,8 @@ function AdminMessages({ toggleChatBubble, openChatWindow }: any) {
   const socketRef = useRef();
   const [activeUsers, setActiveUsers] = useState();
   const [openNontification, setOpenNontification] = useState(false);
+  const currentRoomName = useRef();
+  const currentRoomId = useRef();
 
   const sortMessages = (messages: any) => {
     return messages.sort((a: any, b: any) => {
@@ -81,6 +83,8 @@ function AdminMessages({ toggleChatBubble, openChatWindow }: any) {
     socketRef.current.on('Admin Last Messages', (data) => {
       if (data.sender !== 'Admin') setOpenNontification(true);
     });
+
+  
   }, []);
 
   const handleCloseChat = () => {
@@ -102,15 +106,24 @@ function AdminMessages({ toggleChatBubble, openChatWindow }: any) {
       roomId: roomId,
       roomName: roomName,
     });
+
+    // @ts-ignore
+    currentRoomName.current = roomName
+    // @ts-ignore
+    currentRoomId.current = roomId
     // @ts-ignore
     socketRef.current.emit('Set seen', { user: roomName, roomId });
     toggleChatBubble(false);
-    toggleChatBubble(true);
+    
+    setTimeout(() => {
+      toggleChatBubble(true);
+    }, 100)
+   
     // });
   };
 
   const handleSetSeen = () => {
-    // console.log(currentRoomInfo)
+    // console.log(currentRoomInfo.roomName)
     // @ts-ignore
     socketRef.current.emit('Set seen', { user: currentRoomInfo.roomName, roomId: currentRoomInfo.roomId });
     setOpenNontification(false);
@@ -154,13 +167,16 @@ function AdminMessages({ toggleChatBubble, openChatWindow }: any) {
       setOnline(activeUsers.includes(currentRoomInfo.roomId));
       // @ts-ignore
       socketRef.current.on('Set Seen', () => {
-        // console.log(currentRoomInfo.roomId)
-        axios.post('/messages', { roomId: currentRoomInfo.roomId }).then((res) => {
-          setCurrentMessages(res.data.messages);
-        });
+        if (currentRoomInfo.roomName === currentRoomName.current) {
+          axios.post('/messages', { roomId: currentRoomInfo.roomId }).then((res) => {
+            setCurrentMessages(res.data.messages);
+          });
+        }
+        
       });
     }
   }, [currentRoomInfo, activeUsers]);
+
 
   const messageDropdown = () => {
     if (messages === null) {
