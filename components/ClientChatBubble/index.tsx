@@ -70,11 +70,7 @@ function ChatBubble({ openChatBubble, toggleChatBubble, user, toggleRegisterLogi
 
       try {
         // setTimeout(() => {
-        axios.post('/messages', { roomId: user._id }, {
-          headers: {
-            'Authorization': 'Bearer ' + user.token
-          }
-        }).then((res) => {
+        axios.post('/messages', { roomId: user._id }).then((res) => {
           if (res.data.messages.length) {
             setMessages(res.data.messages);
             // console.log(res.data.messages);
@@ -110,11 +106,7 @@ function ChatBubble({ openChatBubble, toggleChatBubble, user, toggleRegisterLogi
       });
       // @ts-ignore
       socketRef.current.on('Set Seen', () => {
-        axios.post('/messages', { roomId: user._id }, {
-          headers: {
-            'Authorization': 'Bearer ' + user.token
-          }
-        }).then((res) => {
+        axios.post('/messages', { roomId: user._id }).then((res) => {
           setMessages(res.data.messages);
         });
       });

@@ -97,6 +97,7 @@ function AdminMessages({ toggleChatBubble, openChatWindow }: any) {
     // axios.post('/messages', { roomId }).then((res) => {
     // @ts-ignore
     socketRef.current.emit('Join room', { roomId });
+    // console.log('run')  
     setCurrentRoomInfo({
       roomId: roomId,
       roomName: roomName,
@@ -109,6 +110,7 @@ function AdminMessages({ toggleChatBubble, openChatWindow }: any) {
   };
 
   const handleSetSeen = () => {
+    // console.log(currentRoomInfo)
     // @ts-ignore
     socketRef.current.emit('Set seen', { user: currentRoomInfo.roomName, roomId: currentRoomInfo.roomId });
     setOpenNontification(false);
@@ -152,7 +154,8 @@ function AdminMessages({ toggleChatBubble, openChatWindow }: any) {
       setOnline(activeUsers.includes(currentRoomInfo.roomId));
       // @ts-ignore
       socketRef.current.on('Set Seen', () => {
-        axios.post('/messages', { roomId: currentRoomInfo.roomId }, header).then((res) => {
+        // console.log(currentRoomInfo.roomId)
+        axios.post('/messages', { roomId: currentRoomInfo.roomId }).then((res) => {
           setCurrentMessages(res.data.messages);
         });
       });
