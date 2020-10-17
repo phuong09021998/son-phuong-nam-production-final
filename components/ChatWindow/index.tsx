@@ -22,7 +22,6 @@ function ChatWindow({
   handleCloseChat,
   user,
   isAdmin,
-  avatarId,
   isOnline,
   roomInfo,
   handleClick,
